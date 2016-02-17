@@ -99,7 +99,8 @@ private:
 			}
 		}
 
-		// if
+		// just a fail-safe to return an arbitrarily large value (in terms of chess board moves)
+		// if we cannot find the end position ... this should never happen
 		return 64;
 	}
 
