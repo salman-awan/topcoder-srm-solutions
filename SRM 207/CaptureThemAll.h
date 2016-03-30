@@ -51,10 +51,9 @@ public:
     }
 
 private:
+    // returns the shortest path length from the knight start position to the knight end position using BFS
     int shortestPath(const Position& start, const Position& end)
     {
-        // this function implements BFS to find the shortest path from the start position to the end position
-
         // maintain a set of all visited positions
         set<Position> visited;
 
@@ -92,15 +91,12 @@ private:
         }
 
         // just a fail-safe to return an arbitrarily large value (in terms of chess board moves)
-        // if we cannot find the end position ... this should never happen
         return 64;
     }
 
+    // generates and returns all valid knight moves from the specified position
     vector<Position> moveKnight(const Position& pos)
     {
-        // this functions generates all valid knight moves from the specified position
-        // and returns a vector containing these positions
-
         vector<Position> result;
 
         // (-2, -1)
