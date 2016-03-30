@@ -1,8 +1,6 @@
 // CaptureThemAll – SRM 207 Div 2 (3rd problem)
 // Full problem statement: https://community.topcoder.com/stat?c=problem_statement&pm=2915&rd=5853
 
-#pragma once
-
 #include <string>
 #include <vector>
 #include <queue>
@@ -37,12 +35,6 @@ class CaptureThemAll
 public:
     int fastKnight(string knight, string rook, string queen)
     {
-        // the solution below treats the valid knight moves on the board as a graph
-        // thus making this a shortest path finding problem (in an unweighted, undirected graph)
-        // we will first compute the shortest path from the knight to the rook and then to the queen
-        // then we will compute the shortest path from the knight to the queen and then to the rook
-        // and finally return the minimum of these 2 paths
-
         // get initial positions of knight, rook and queen
         auto knight_pos = Position(knight[1] - '1', knight[0] - 'a');
         auto rook_pos = Position(rook[1] - '1', rook[0] - 'a');
@@ -100,7 +92,7 @@ private:
         }
 
         // just a fail-safe to return an arbitrarily large value (in terms of chess board moves)
-        // if we cannot find the end position ... this should never happen
+        // if we cannot find the end position
         return 64;
     }
 
